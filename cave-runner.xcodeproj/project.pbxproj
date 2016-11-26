@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		162103751DEA490000CCFC27 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 162103741DEA490000CCFC27 /* main.cpp */; };
+		1621037D1DEA490D00CCFC27 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1621037C1DEA490D00CCFC27 /* OpenGL.framework */; };
+		1621037F1DEA491100CCFC27 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1621037E1DEA491100CCFC27 /* GLUT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		162103711DEA490000CCFC27 /* cave-runner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cave-runner"; sourceTree = BUILT_PRODUCTS_DIR; };
 		162103741DEA490000CCFC27 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1621037C1DEA490D00CCFC27 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		1621037E1DEA491100CCFC27 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1621037F1DEA491100CCFC27 /* GLUT.framework in Frameworks */,
+				1621037D1DEA490D00CCFC27 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +49,7 @@
 			children = (
 				162103731DEA490000CCFC27 /* cave-runner */,
 				162103721DEA490000CCFC27 /* Products */,
+				1621037B1DEA490D00CCFC27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +67,15 @@
 				162103741DEA490000CCFC27 /* main.cpp */,
 			);
 			path = "cave-runner";
+			sourceTree = "<group>";
+		};
+		1621037B1DEA490D00CCFC27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1621037E1DEA491100CCFC27 /* GLUT.framework */,
+				1621037C1DEA490D00CCFC27 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +234,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 35828L95Q5;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -226,6 +243,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 35828L95Q5;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
