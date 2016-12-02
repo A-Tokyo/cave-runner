@@ -234,6 +234,9 @@ static int windowWidth = 1080;
 // Game configuration
 void newGame();
 void endGame();
+// I/O
+void passM(int x,int y);
+void keyUp(unsigned char k, int x,int y);
 // Environment Configuration
 void setupCamera();
 void setupLights();
@@ -267,6 +270,10 @@ void anim() {
     glutPostRedisplay();
 }
 
+void passM(int x,int y) {
+
+}
+
 void keyUp(unsigned char k, int x,int y)//keyboard up function is called whenever the keyboard key is released
 {
     switch (k) {
@@ -290,9 +297,36 @@ void setupCamera() {
 
 void setupLights() {}
 
-int main(int argc, const char * argv[]) {
+int main(int argc, char** argv){
     // insert code here...
     std::cout << "Hello, World!\n";
+    
+    glutInit(&argc, argv);
+    glutCreateWindow("Cave Runner");
+    glutInitWindowSize(windowWidth, windowHeight);
+    glutFullScreen();
+    glutDisplayFunc(Display);
+    glutIdleFunc(anim);
+    glutPassiveMotionFunc(passM); // call passive motion function for mouse movements
+    glutKeyboardUpFunc(keyUp);		//call the keyboard up function
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
+    glutSetCursor(GLUT_CURSOR_NONE);
+    
+    glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+    gluOrtho2D(0.0, windowWidth, 0.0, windowHeight);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+    glEnable(GL_LIGHT1);
+    glEnable(GL_NORMALIZE);
+    glEnable(GL_COLOR_MATERIAL);
+    
+    glShadeModel(GL_SMOOTH);
+    glEnable(GL_TEXTURE_2D);
+    
     newGame();
+    
+    glutMainLoop();
+    
     return 0;
 }
