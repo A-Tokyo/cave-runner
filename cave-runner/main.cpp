@@ -24,13 +24,13 @@ typedef struct vector {
         this->y = 0;
         this->z =0;
     }
-    std::string toString() {
-        return "["+ std::to_string(x) + ", "+ std::to_string(y) + ", "+std::to_string(z)+"]" ;
-    }
     vector unitVector() {
         float magnitude = sqrtf(pow(x,2)+pow(y,2)+pow(z,2));
         vector unitVector(x/magnitude,y/magnitude,z/magnitude);
         return unitVector;
+    }
+    float magnitude() {
+        return sqrtf(pow(x,2)+pow(y,2)+pow(z,2));
     }
     void set(float newx, float newy, float newz) {
         x = newx;
@@ -42,8 +42,8 @@ typedef struct vector {
         y = vector->y;
         z = vector->z;
     }
-    float magnitude() {
-        return sqrtf(pow(x,2)+pow(y,2)+pow(z,2));
+    std::string toString() {
+        return "["+ std::to_string(x) + ", "+ std::to_string(y) + ", "+std::to_string(z)+"]" ;
     }
 } vector;
 typedef struct quadraple {
@@ -325,8 +325,6 @@ void setupLights() {
 }
 
 int main(int argc, char** argv) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
     
     glutInit(&argc, argv);
     glutCreateWindow("Cave Runner");
