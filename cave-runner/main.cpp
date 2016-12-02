@@ -196,11 +196,11 @@ typedef struct playerStatus {
         this->score += scoreIncrement;
     }
 }playerStatus;
-typedef struct mainCharacter {
+typedef struct character {
     vector *translation;
     quadraple *rotation;
     quadraple *deepRotation;
-    mainCharacter(vector *translation, quadraple *rotation, quadraple *deepRotation) {
+    character(vector *translation, quadraple *rotation, quadraple *deepRotation) {
         this->translation = translation;
         this->rotation = rotation;
         this->deepRotation = deepRotation;
@@ -225,11 +225,10 @@ typedef struct mainCharacter {
     void resetAttrs() {
         //TODO reset attributes here
     }
-} mainCharacter;
+} character;
 
-
-static int windowHeight = 720;
 static int windowWidth = 1080;
+static int windowHeight = 720;
 
 // Game configuration
 void newGame();
@@ -244,23 +243,42 @@ void setupLights();
 void Display();
 void Anim();
 
+
+//Basic game state
+gameStatus gameStat("basic");
+gameCamera gameCam(0, 0, 180, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0); // Defining default camera
+
+// Initial initialization, Control these vectors using the objects only
+
+vector mainCharacterTranslation(0,0,0);
+vector mainCharacterInitialTranslation(0,0,0);
+quadraple mainCharacterRotation(0,0,0,0);
+quadraple mainCharacterInitialRotation(0,0,0,0);
+quadraple mainCharacterDeepRotation(0,0,0,0);
+character mainCharacter(&mainCharacterTranslation, &mainCharacterRotation, &mainCharacterDeepRotation);
+
+
+
+// Start of custom game functions
+
+
 void newGame(){
     
 }
 
 void endGame() {
-//    gameStat.gameOver = true;
-//    exit (0);
+    gameStat.setGameOver(true);
+    exit (0);
 }
 
 void Display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glPushMatrix();
     
-//    if(!gameStat.gameOver) {
-//        setupCamera();
-//        setupLights();
-//    }
+    if(!gameStat.isGameOver()) {
+        setupCamera();
+        setupLights();
+    }
     
     glPopMatrix();
     glFlush();
@@ -269,6 +287,8 @@ void Display() {
 void anim() {
     glutPostRedisplay();
 }
+
+// I/O functions
 
 void passM(int x,int y) {
 
@@ -284,6 +304,8 @@ void keyUp(unsigned char k, int x,int y)//keyboard up function is called wheneve
     glutPostRedisplay();//redisplay to update the screen with the changed
 }
 
+// openGL Environment Initilization
+
 void setupCamera() {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -292,7 +314,7 @@ void setupCamera() {
     
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-//    gluLookAt(gameCam.eyeX, gameCam.eyeY, gameCam.eyeZ, gameCam.centerX, gameCam.centerY, gameCam.centerZ, gameCam.upX, gameCam.upY, gameCam.upZ);
+    gluLookAt(gameCam.eyeX, gameCam.eyeY, gameCam.eyeZ, gameCam.centerX, gameCam.centerY, gameCam.centerZ, gameCam.upX, gameCam.upY, gameCam.upZ);
 }
 
 void setupLights() {}
@@ -310,7 +332,7 @@ int main(int argc, char** argv){
     glutPassiveMotionFunc(passM); // call passive motion function for mouse movements
     glutKeyboardUpFunc(keyUp);		//call the keyboard up function
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
-    glutSetCursor(GLUT_CURSOR_NONE);
+//    glutSetCursor(GLUT_CURSOR_NONE);
     
     glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
     gluOrtho2D(0.0, windowWidth, 0.0, windowHeight);
