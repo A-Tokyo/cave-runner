@@ -178,6 +178,9 @@ typedef struct gameStatus {
     void setGameOver(bool gameOver){
         this->gameOver = gameOver;
     }
+    void reset() {
+        gameOver = false;
+    }
 }gameStatus;
 typedef struct playerStatus {
     std::string name;
@@ -317,9 +320,11 @@ void setupCamera() {
     gluLookAt(gameCam.eyeX, gameCam.eyeY, gameCam.eyeZ, gameCam.centerX, gameCam.centerY, gameCam.centerZ, gameCam.upX, gameCam.upY, gameCam.upZ);
 }
 
-void setupLights() {}
+void setupLights() {
+// TODO Setup Lights here
+}
 
-int main(int argc, char** argv){
+int main(int argc, char** argv) {
     // insert code here...
     std::cout << "Hello, World!\n";
     
