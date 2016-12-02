@@ -196,6 +196,36 @@ typedef struct playerStatus {
         this->score += scoreIncrement;
     }
 }playerStatus;
+typedef struct mainCharacter {
+    vector *translation;
+    quadraple *rotation;
+    quadraple *deepRotation;
+    mainCharacter(vector *translation, quadraple *rotation, quadraple *deepRotation) {
+        this->translation = translation;
+        this->rotation = rotation;
+        this->deepRotation = deepRotation;
+    }
+    void setTranslation(vector toTranslate) {
+        translation->x = toTranslate.x;
+        translation->y = toTranslate.y;
+        translation->z = toTranslate.z;
+    }
+    void setRotation(quadraple toRotate) {
+        rotation->a = toRotate.a;
+        rotation->x = toRotate.x;
+        rotation->y = toRotate.y;
+        rotation->z = toRotate.z;
+    }
+    void setRotation(float a, float x, float y, float z) {
+        rotation->a = a;
+        rotation->x = x;
+        rotation->y = y;
+        rotation->z = z;
+    }
+    void resetAttrs() {
+        //TODO reset attributes here
+    }
+} mainCharacter;
 
 
 static int windowHeight = 720;
