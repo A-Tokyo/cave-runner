@@ -231,6 +231,44 @@ typedef struct mainCharacter {
 static int windowHeight = 720;
 static int windowWidth = 1080;
 
+// Environment Configuration
+void setupCamera();
+void setupLights();
+// basic openGL
+void Display();
+void Anim();
+
+void Display() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glPushMatrix();
+    
+//    if(!gameStat.gameOver) {
+//        setupCamera();
+//        setupLights();
+//    }
+    
+    glPopMatrix();
+    glFlush();
+}
+
+void anim()
+{
+    glutPostRedisplay();
+}
+
+void setupCamera() {
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glOrtho(1, 1, -1, 1, -1, 1);
+    gluPerspective(80, 640 / 480, 0.001, 1000);
+    
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+//    gluLookAt(gameCam.eyeX, gameCam.eyeY, gameCam.eyeZ, gameCam.centerX, gameCam.centerY, gameCam.centerZ, gameCam.upX, gameCam.upY, gameCam.upZ);
+}
+
+void setupLights() {}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
