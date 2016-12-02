@@ -231,12 +231,24 @@ typedef struct mainCharacter {
 static int windowHeight = 720;
 static int windowWidth = 1080;
 
+// Game configuration
+void newGame();
+void endGame();
 // Environment Configuration
 void setupCamera();
 void setupLights();
 // basic openGL
 void Display();
 void Anim();
+
+void newGame(){
+    
+}
+
+void endGame() {
+//    gameStat.gameOver = true;
+//    exit (0);
+}
 
 void Display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -251,9 +263,18 @@ void Display() {
     glFlush();
 }
 
-void anim()
-{
+void anim() {
     glutPostRedisplay();
+}
+
+void keyUp(unsigned char k, int x,int y)//keyboard up function is called whenever the keyboard key is released
+{
+    switch (k) {
+        case 27:
+            endGame();
+            break;
+    }
+    glutPostRedisplay();//redisplay to update the screen with the changed
 }
 
 void setupCamera() {
@@ -272,5 +293,6 @@ void setupLights() {}
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
+    newGame();
     return 0;
 }
