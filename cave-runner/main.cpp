@@ -79,6 +79,21 @@ typedef struct quadraple {
         return "["+ std::to_string(a) + ", "+ std::to_string(x) + ", "+ std::to_string(y) + std::to_string(z)+"]" ;
     }
 } quadraple;
+typedef struct rgbColor {
+    float r;
+    float g;
+    float b;
+    rgbColor(float r, float g, float b){
+        this->r = r;
+        this->g = g;
+        this->b =b;
+    }
+    rgbColor(){
+        this->r = 1;
+        this->g = 1;
+        this->b =1;
+    }
+}rgbColor;
 typedef struct gameCamera {
     double eyeX;
     double eyeY;
@@ -150,6 +165,37 @@ typedef struct gameCamera {
         return "[" + std::to_string(eyeX) + ", " + std::to_string(eyeY) + ", " + std::to_string(eyeZ) + "]" ;
     }
 } gameCamera;
+typedef struct gameStatus {
+    std::string gameMode;
+    bool gameOver;
+    gameStatus(std::string gameMode){
+        this->gameMode = gameMode;
+        this->gameOver = false;
+    }
+    bool isGameOver(){
+        return gameOver;
+    }
+    void setGameOver(bool gameOver){
+        this->gameOver = gameOver;
+    }
+}gameStatus;
+typedef struct playerStatus {
+    std::string name;
+    int score;
+    playerStatus(std::string name){
+        this->name = name;
+        score = 0;
+    }
+    int getScore(){
+        return score;
+    }
+    void setScore(int score){
+        this->score = score;
+    }
+    void incrementScore(int scoreIncrement){
+        this->score += scoreIncrement;
+    }
+}playerStatus;
 
 
 static int windowHeight = 720;
