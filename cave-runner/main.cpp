@@ -6,6 +6,7 @@
 #include <math.h>
 // Custom Includes
 #include "gameStructs.hpp"
+#include "gameDrawing.hpp"
 // Definitions
 using namespace std;
 #define PI 3.14159265
