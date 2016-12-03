@@ -47,23 +47,33 @@ quadraple mainCharacterDeepRotation(0,0,0,0);
 character mainCharacter(&mainCharacterTranslation, &mainCharacterRotation, &mainCharacterDeepRotation);
 
 
-
 // Start of custom game functions
 
-
+/*
+ * New Game function is called once the program runs, it creates a new game and sets up the environment
+ */
 void newGame(){
     
 }
 
+/*
+ * End Game function is called when the ESC button is pressed, it sets the game state to game over and closes the window.
+ */
 void endGame() {
     gameStat.setGameOver(true);
     exit (0);
 }
 
+/*
+ Passive Motion function is called whenever the mouse moves
+ */
 void gamePassiveMotion(int x, int y){
     
 }
 
+/*
+ keyboard up function is called whenever the keyboard key is released
+ */
 void gameKeyUp(unsigned char k, int x,int y){
     switch (k) {
         case 27:
@@ -71,7 +81,9 @@ void gameKeyUp(unsigned char k, int x,int y){
             break;
     }
 }
-
+/*
+ glut Display Function
+ */
 void Display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glPushMatrix();
@@ -84,28 +96,41 @@ void Display() {
     glPopMatrix();
     glFlush();
 }
-
+/*
+ glut Idle Function
+ */
 void anim() {
     glutPostRedisplay();
 }
 
+// Below is openGL static code, Do add game logic here to keep the project state modular and clean
+
 // I/O functions
 
+/*
+ Passive Motion function is called whenever the mouse moves
+ Don't add any code here, add it in void gamePassiveMotion(int x, int y)
+ */
 void passM(int x,int y) {
-    //Don't add any code here, add it in void gamePassiveMotion(int x, int y)
     gamePassiveMotion(x, y);
     glutPostRedisplay();//redisplay to update the screen with the changes
 }
 
-void keyUp(unsigned char k, int x,int y)//keyboard up function is called whenever the keyboard key is released
+/*
+ keyboard up function is called whenever the keyboard key is released
+ Don't add any game code here, add it in void void gameKeyUp(unsigned char k, int x,int y)
+ */
+void keyUp(unsigned char k, int x,int y)
 {
-    //Don't add any code here, add it in void void gameKeyUp(unsigned char k, int x,int y)
     gameKeyUp(k, x, y);
     glutPostRedisplay();//redisplay to update the screen with the changes
 }
 
 // openGL Environment Initilization
 
+/*
+ Sets up the camera for the game
+ */
 void setupCamera() {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -117,10 +142,16 @@ void setupCamera() {
     gluLookAt(gameCam.eyeX, gameCam.eyeY, gameCam.eyeZ, gameCam.centerX, gameCam.centerY, gameCam.centerZ, gameCam.upX, gameCam.upY, gameCam.upZ);
 }
 
+/*
+ Sets up the light for the game
+ */
 void setupLights() {
 // TODO Setup Lights here
 }
 
+/*
+ Main function
+ */
 int main(int argc, char** argv) {
     
     glutInit(&argc, argv);
