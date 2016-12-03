@@ -10,6 +10,7 @@
 		162103751DEA490000CCFC27 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 162103741DEA490000CCFC27 /* main.cpp */; };
 		1621037D1DEA490D00CCFC27 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1621037C1DEA490D00CCFC27 /* OpenGL.framework */; };
 		1621037F1DEA491100CCFC27 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1621037E1DEA491100CCFC27 /* GLUT.framework */; };
+		162C5F861DF3645F00CA5CB3 /* gameDrawing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 162C5F841DF3645F00CA5CB3 /* gameDrawing.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,8 @@
 		1621037C1DEA490D00CCFC27 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		1621037E1DEA491100CCFC27 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		162C5F7A1DF3577F00CA5CB3 /* gameStructs.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gameStructs.hpp; sourceTree = "<group>"; };
+		162C5F841DF3645F00CA5CB3 /* gameDrawing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gameDrawing.cpp; sourceTree = "<group>"; };
+		162C5F851DF3645F00CA5CB3 /* gameDrawing.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gameDrawing.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 			children = (
 				162C5F7C1DF35AE800CA5CB3 /* headers */,
 				162103741DEA490000CCFC27 /* main.cpp */,
+				162C5F841DF3645F00CA5CB3 /* gameDrawing.cpp */,
 			);
 			path = "cave-runner";
 			sourceTree = "<group>";
@@ -83,6 +87,7 @@
 		162C5F7C1DF35AE800CA5CB3 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				162C5F851DF3645F00CA5CB3 /* gameDrawing.hpp */,
 				162C5F7A1DF3577F00CA5CB3 /* gameStructs.hpp */,
 			);
 			name = headers;
@@ -146,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				162C5F861DF3645F00CA5CB3 /* gameDrawing.cpp in Sources */,
 				162103751DEA490000CCFC27 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
