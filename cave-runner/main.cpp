@@ -19,13 +19,15 @@ static int windowHeight = 720;
 // Game configuration
 void newGame();
 void endGame();
-// I/O
+// Game I/O
+void gameKeyUp(unsigned char k, int x,int y);
+// OpenGL I/O
 void passM(int x,int y);
 void keyUp(unsigned char k, int x,int y);
-// Environment Configuration
+// OpenGL Environment Configuration
 void setupCamera();
 void setupLights();
-// basic openGL
+// Basic openGL
 void Display();
 void Anim();
 
@@ -57,6 +59,14 @@ void endGame() {
     exit (0);
 }
 
+void gameKeyUp(unsigned char k, int x,int y){
+    switch (k) {
+        case 27:
+            endGame();
+            break;
+    }
+}
+
 void Display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glPushMatrix();
@@ -82,11 +92,7 @@ void passM(int x,int y) {
 
 void keyUp(unsigned char k, int x,int y)//keyboard up function is called whenever the keyboard key is released
 {
-    switch (k) {
-        case 27:
-            endGame();
-            break;
-    }
+    gameKeyUp(k, x, y);
     glutPostRedisplay();//redisplay to update the screen with the changed
 }
 
