@@ -21,6 +21,7 @@ void newGame();
 void endGame();
 // Game I/O
 void gameKeyUp(unsigned char k, int x,int y);
+void gamePassiveMotion(int x, int y);
 // OpenGL I/O
 void passM(int x,int y);
 void keyUp(unsigned char k, int x,int y);
@@ -59,6 +60,10 @@ void endGame() {
     exit (0);
 }
 
+void gamePassiveMotion(int x, int y){
+    
+}
+
 void gameKeyUp(unsigned char k, int x,int y){
     switch (k) {
         case 27:
@@ -87,13 +92,16 @@ void anim() {
 // I/O functions
 
 void passM(int x,int y) {
-
+    //Don't add any code here, add it in void gamePassiveMotion(int x, int y)
+    gamePassiveMotion(x, y);
+    glutPostRedisplay();//redisplay to update the screen with the changes
 }
 
 void keyUp(unsigned char k, int x,int y)//keyboard up function is called whenever the keyboard key is released
 {
+    //Don't add any code here, add it in void void gameKeyUp(unsigned char k, int x,int y)
     gameKeyUp(k, x, y);
-    glutPostRedisplay();//redisplay to update the screen with the changed
+    glutPostRedisplay();//redisplay to update the screen with the changes
 }
 
 // openGL Environment Initilization
