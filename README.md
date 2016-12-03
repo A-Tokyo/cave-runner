@@ -35,11 +35,11 @@ If you are using windows:
 
 >    - Open the cave-runner directory in Microsoft Visual Studio as a project
 >    - comment the following lines:
->       * #include \<OpenGl/gl.h\>
->       * #include \<OpenGl/glu.h\>
->       * #include \<GLUT/glut.h\>
+>       * #include \<OpenGl/gl.h>
+>       * #include \<OpenGl/glu.h>
+>       * #include \<GLUT/glut.h>
 >    - add the following line:
->       * #include \<glut.h>\
+>       * #include \<glut.h>
 
 ## Contribution
 #### Style Guide:
