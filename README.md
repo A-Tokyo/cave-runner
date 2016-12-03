@@ -10,14 +10,14 @@ The main target is to complete 5 minutes without colliding with any obstacle and
 ## Project Structure
 ```shell
 
-├── /cave-runner.xcodeproj/                          # Holds the xCode project configuration
-├── /cave-runner/                                    # Holds the full source code
-│       ├── gameDrawing.cpp                          # Holds the game's graphics modeling and drawing logic
-│       ├── gameDrawing.hpp                          # Holds the header for gameDrawing.cpp
-│       ├── gameStructs.hpp                          # Holds the game data structures and static variables
-│       └── main.cpp                                 # Holds the main source code of the game, connecting everything
-├── LICENSE.txt                                      # The License of the project; MIT License
-└── README.md                                        # The README file
+├── /cave-runner.xcodeproj/             # Holds the xCode project configuration
+├── /cave-runner/                       # Holds the full source code
+│       ├── gameDrawing.cpp             # Holds the game's graphics modeling and drawing logic
+│       ├── gameDrawing.hpp             # Holds the header for gameDrawing.cpp
+│       ├── gameStructs.hpp             # Holds the game data structures and static variables
+│       └── main.cpp                    # Holds the main source code of the game, connecting everything
+├── LICENSE.txt                         # The License of the project; MIT License
+└── README.md                           # The README file
 
 ```
 
