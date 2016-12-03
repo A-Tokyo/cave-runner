@@ -10,7 +10,6 @@
 		162103751DEA490000CCFC27 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 162103741DEA490000CCFC27 /* main.cpp */; };
 		1621037D1DEA490D00CCFC27 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1621037C1DEA490D00CCFC27 /* OpenGL.framework */; };
 		1621037F1DEA491100CCFC27 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1621037E1DEA491100CCFC27 /* GLUT.framework */; };
-		162C5F7B1DF3577F00CA5CB3 /* gameStructs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 162C5F791DF3577F00CA5CB3 /* gameStructs.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,7 +29,6 @@
 		162103741DEA490000CCFC27 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1621037C1DEA490D00CCFC27 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		1621037E1DEA491100CCFC27 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
-		162C5F791DF3577F00CA5CB3 /* gameStructs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gameStructs.cpp; sourceTree = "<group>"; };
 		162C5F7A1DF3577F00CA5CB3 /* gameStructs.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = gameStructs.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,9 +65,8 @@
 		162103731DEA490000CCFC27 /* cave-runner */ = {
 			isa = PBXGroup;
 			children = (
+				162C5F7C1DF35AE800CA5CB3 /* headers */,
 				162103741DEA490000CCFC27 /* main.cpp */,
-				162C5F791DF3577F00CA5CB3 /* gameStructs.cpp */,
-				162C5F7A1DF3577F00CA5CB3 /* gameStructs.hpp */,
 			);
 			path = "cave-runner";
 			sourceTree = "<group>";
@@ -81,6 +78,14 @@
 				1621037C1DEA490D00CCFC27 /* OpenGL.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		162C5F7C1DF35AE800CA5CB3 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				162C5F7A1DF3577F00CA5CB3 /* gameStructs.hpp */,
+			);
+			name = headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +146,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				162C5F7B1DF3577F00CA5CB3 /* gameStructs.cpp in Sources */,
 				162103751DEA490000CCFC27 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
