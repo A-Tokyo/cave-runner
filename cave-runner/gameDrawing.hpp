@@ -18,4 +18,9 @@
 // Custom Includes
 #include "gameStructs.hpp"
 
+
+/*
+ * Add drawing functions' signatures here.
+ */
+
 #endif /* gameDrawing_hpp */
