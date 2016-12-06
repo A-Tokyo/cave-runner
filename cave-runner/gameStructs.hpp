@@ -178,7 +178,7 @@ typedef struct gameStatus {
     gameStatus(std::string gameMode){
         this->gameMode = gameMode;
         this->gameOver = false;
-        this->controlPlayer = false;
+        this->controlPlayer = true;
     }
     bool isGameOver(){
         return gameOver;
@@ -197,7 +197,7 @@ typedef struct gameStatus {
     }
     void reset() {
         gameOver = false;
-        controlPlayer = false;
+        controlPlayer = true;
     }
 }gameStatus;
 typedef struct playerStatus {

@@ -65,7 +65,9 @@ character mainCharacter(&mainCharacterTranslation, &mainCharacterRotation, &main
  * New Game function is called once the program runs, it creates a new game and sets up the environment
  */
 void newGame(){
+    gameStat.reset();
     player.resetAttrs();
+    // set player to initial position
 }
 
 /*
