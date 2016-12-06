@@ -100,14 +100,16 @@ bool hitObstacle(character *thisCharacter){
  */
 bool hitCoin(character *thisCharacter){
     // If condition to return true
+    // or change to int and return the scorePoint
     return false;
 }
 
 /*
  Takes the score to increment as input, increments the player score accordingly
+ This function MUTATES player
  */
 void incrementScore(int scoreToIncrement){
-    
+    player.incrementScore(scoreToIncrement);
 }
 
 /*
