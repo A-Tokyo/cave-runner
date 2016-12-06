@@ -21,8 +21,12 @@ void newGame();
 void endGame();
 // Game drawing
 void drawGame(character* runnerCharacter);
-// Player controls
+// Game Player controls
 void controlPlayer(unsigned char k);
+// Game Logic
+bool hitObstacle(character *thisCharacter);
+bool hitCoin(character *thisCharacter);
+void incrementScore(int scoreToIncrement);
 // Game I/O
 void gameKeyUp(unsigned char k, int x,int y);
 void gamePassiveMotion(int x, int y);
@@ -75,6 +79,32 @@ void drawGame(character* runnerCharacter){
     drawCave();
     drawRunner(runnerCharacter);
     // add other draws here, and to the inputs if needed
+}
+
+
+// Game Logic
+
+/*
+ Takes the character as input, returns true if the character has hit any of the obstacles (rocks)
+ */
+bool hitObstacle(character *thisCharacter){
+    // If condition to return true
+    return false;
+}
+
+/*
+ Takes the character as input, returns true if the character has hit any of the coins
+ */
+bool hitCoin(character *thisCharacter){
+    // If condition to return true
+    return false;
+}
+
+/*
+ Takes the score to increment as input, increments the player score accordingly
+ */
+void incrementScore(int scoreToIncrement){
+    
 }
 
 /*
