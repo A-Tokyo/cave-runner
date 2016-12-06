@@ -127,6 +127,9 @@ void gamePassiveMotion(int x, int y){
  */
 void gameKeyUp(unsigned char k, int x,int y){
     switch (k) {
+        case 'n':
+            newGame();
+            break;
         case 27:
             endGame();
             break;
