@@ -45,6 +45,9 @@ void Anim();
 gameStatus gameStat("basic");
 gameCamera gameCam(0, 0, 180, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0); // Defining default camera
 
+// Basic player state
+playerStatus player("player");
+
 // Initial initialization, Control these vectors using the objects only
 
 vector mainCharacterTranslation(0,0,0);

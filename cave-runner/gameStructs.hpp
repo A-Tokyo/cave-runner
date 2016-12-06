@@ -214,7 +214,13 @@ typedef struct playerStatus {
         this->score = score;
     }
     void incrementScore(int scoreIncrement){
-        this->score += scoreIncrement;
+        score += scoreIncrement;
+    }
+    void decrementScore(int scoreDecrement){
+        score -= scoreDecrement;
+        if(score<0){
+            score=0;
+        }
     }
 }playerStatus;
 typedef struct character {
