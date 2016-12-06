@@ -11,9 +11,11 @@
 #include "gameStructs.hpp"
 
 
-void drawRunner(character* thisCharacter);
 void drawCave();
+void drawRunner(character* thisCharacter);
 void drawRock(obstacle* thisObstacle);
+void drawCoin(coin* thisCoin);
+
 
 /*
  * Add drawing functions' signatures here.

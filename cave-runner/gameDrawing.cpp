@@ -55,6 +55,32 @@ void drawRock(obstacle* thisObstacle){
     glPopMatrix(); // popping main matrix
 }
 
+void drawCoin(coin* thisCoin){
+    glPushMatrix(); // pushing main matrix
+        //Top Level Rotation (adjustable through thisCoin)
+        glRotated(thisCoin->rotation->a ,thisCoin->rotation->x, thisCoin->rotation->y, thisCoin->rotation->z);
+        //Top Level Translation (adjustable through thisCoin)
+        glTranslated(thisCoin->translation->x, thisCoin->translation->y, thisCoin->translation->z);
+    
+        // Creating the gluNewQuadric object
+        GLUquadricObj * qobj;
+        qobj = gluNewQuadric();
+    
+        glPushMatrix(); // pushing 1st level matrix
+        // deep level rotation (adjustable through thisCoin)
+        glRotated(thisCoin->deepRotation->a ,thisCoin->deepRotation->x, thisCoin->deepRotation->y, thisCoin->deepRotation->z);
+    
+            glPushMatrix(); // pushing 3rd level matrix (draw coin)
+    
+            // TODO Draw coin here
+    
+            glPopMatrix(); // popping 3rd level matrix (draw coin)
+    
+        glPopMatrix(); // popping 1st level matrix
+    
+    glPopMatrix(); // popping main matrix
+}
+
 
 /*
  * Implement other drawing functions here.
