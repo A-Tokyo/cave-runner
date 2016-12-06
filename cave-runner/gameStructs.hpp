@@ -202,9 +202,16 @@ typedef struct gameStatus {
 }gameStatus;
 typedef struct playerStatus {
     std::string name;
+    int lives;
     int score;
     playerStatus(std::string name){
         this->name = name;
+        this->lives = 1;
+        score = 0;
+    }
+    playerStatus(std::string name, int lives){
+        this->name = name;
+        this->lives = lives;
         score = 0;
     }
     int getScore(){
