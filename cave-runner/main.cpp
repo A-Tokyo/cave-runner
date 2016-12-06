@@ -27,6 +27,7 @@ void controlPlayer(unsigned char k);
 bool hitObstacle(character *thisCharacter);
 bool hitCoin(character *thisCharacter);
 void incrementScore(int scoreToIncrement);
+void gameLogic(character *thisCharacter);
 // Game I/O
 void gameKeyUp(unsigned char k, int x,int y);
 void gamePassiveMotion(int x, int y);
@@ -155,6 +156,13 @@ void controlPlayer(unsigned char k){
 }
 
 /*
+ * Takes game character, coin and so on as inputs and applies all the game logic calling all the function
+ */
+void gameLogic(character *thisCharacter){
+    
+}
+
+/*
  glut Display Function
  */
 void Display() {
@@ -167,6 +175,7 @@ void Display() {
     setupCamera();
     setupLights();
     drawGame(&mainCharacter);
+    gameLogic(&mainCharacter);
     
     glFlush();
 }
