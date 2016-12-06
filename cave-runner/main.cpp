@@ -139,14 +139,8 @@ void gameKeyUp(unsigned char k, int x,int y){
  */
 void controlPlayer(unsigned char k){
     switch (k) {
-        case 'w':
-            mainCharacter.setTranslation(mainCharacter.translation->x, mainCharacter.translation->y, mainCharacter.translation->z--);
-            break;
         case 'a':
             mainCharacter.setTranslation(mainCharacter.translation->x-2, mainCharacter.translation->y, mainCharacter.translation->z);
-            break;
-        case 's':
-            mainCharacter.setTranslation(mainCharacter.translation->x, mainCharacter.translation->y, mainCharacter.translation->z++);
             break;
         case 'd':
             mainCharacter.setTranslation(mainCharacter.translation->x+2, mainCharacter.translation->y, mainCharacter.translation->z);

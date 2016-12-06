@@ -10,8 +10,6 @@ The main target is to complete 5 minutes without colliding with any obstacle and
 ## Controls
 * a: move to the left
 * d: move to the right
-* w: move forward
-* s: move backward
 * space: Jump
 * n: new game.
 * esc: exit game
