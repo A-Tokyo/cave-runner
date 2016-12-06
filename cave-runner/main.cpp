@@ -20,7 +20,7 @@ static int windowHeight = 720;
 void newGame();
 void endGame();
 // Game drawing
-void draw(character* runnerCharacter);
+void drawGame(character* runnerCharacter);
 // Player controls
 void controlPlayer(unsigned char k);
 // Game I/O
@@ -71,7 +71,7 @@ void endGame() {
 /*
  * Draw all characters
  */
-void draw(character* runnerCharacter){
+void drawGame(character* runnerCharacter){
     drawCave();
     drawRunner(runnerCharacter);
     // add other draws here, and to the inputs if needed
@@ -137,7 +137,7 @@ void Display() {
     
     setupCamera();
     setupLights();
-    draw(&mainCharacter);
+    drawGame(&mainCharacter);
     
     glFlush();
 }
