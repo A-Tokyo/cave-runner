@@ -254,8 +254,8 @@ typedef struct obstacle {
         this->rotation = rotation;
     }
     obstacle(){
-        this->length = 20;
-        this->height = 20;
+        this->length = 15;
+        this->height = 15;
         vector translation(0,0,0);
         this->translation = &translation;
         quadraple rotation(0,0,0,0);

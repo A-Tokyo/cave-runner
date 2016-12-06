@@ -114,8 +114,8 @@ void controlPlayer(unsigned char k){
             break;
         case 32:
             // The jumping max is dependant on the max height of rock and vice versa
-            if(mainCharacter.translation->y<=15){
-             mainCharacter.setTranslation(mainCharacter.translation->x, mainCharacter.translation->y+5, mainCharacter.translation->z);
+            if(mainCharacter.translation->y<=40){
+             mainCharacter.setTranslation(mainCharacter.translation->x, mainCharacter.translation->y+20, mainCharacter.translation->z);
             }
             break;
     }
