@@ -94,10 +94,14 @@ void gameKeyUp(unsigned char k, int x,int y){
             break;
     }
     if(gameStat.canControlPlayer()){
+        // If canControlPlayer call control player function with the key pressed
         controlPlayer(k);
     }
 }
 
+/*
+ * Takes an unsigned char as an input representing the key pressed, controls the player accordingly
+ */
 void controlPlayer(unsigned char k){
     switch (k) {
         case 'w':
