@@ -236,6 +236,27 @@ typedef struct character {
     }
 } character;
 
+typedef struct obstacle {
+    int length;
+    int height;
+    vector *translation;
+    quadraple *rotation;
+    obstacle(int length, int height, vector *translation, quadraple *rotation){
+        this->length = length;
+        this->height = height;
+        this->translation = translation;
+        this->rotation = rotation;
+    }
+    obstacle(){
+        this->length = 20;
+        this->height = 20;
+        vector translation(0,0,0);
+        this->translation = &translation;
+        quadraple rotation(0,0,0,0);
+        this->rotation = &rotation;
+    }
+}obstacle;
+
 
 
 #endif /* gameStructs_hpp */
