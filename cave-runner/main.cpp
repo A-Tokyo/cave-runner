@@ -70,8 +70,9 @@ void endGame() {
  * Draw all characters
  */
 void draw(character* runnerCharacter){
+    drawCave();
     drawRunner(runnerCharacter);
-    // add other draws here, and to the inputs
+    // add other draws here, and to the inputs if needed
 }
 
 /*

@@ -28,6 +28,14 @@ void drawRunner(character* thisCharacter){
     glPopMatrix(); // popping main matrix
 }
 
+void drawCave(){
+    glPushMatrix(); // pushing main matrix
+    
+    // TODO draw cave here
+    
+    glPopMatrix(); // popping main matrix
+}
+
 
 /*
  * Implement other drawing functions here.

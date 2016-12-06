@@ -12,6 +12,7 @@
 
 
 void drawRunner(character* thisCharacter);
+void drawCave();
 
 /*
  * Add drawing functions' signatures here.
