@@ -274,12 +274,23 @@ typedef struct coin {
     vector *translation;
     quadraple *rotation;
     quadraple *deepRotation;
+    rgbColor *color;
     coin(int radius, int scorePoint, vector *translation, quadraple *rotation, quadraple *deepRotation){
         this->radius = radius;
         this->scorePoint = scorePoint;
         this->translation = translation;
         this->rotation = rotation;
         this->deepRotation = deepRotation;
+        rgbColor color(0.8515625, 0.64453125, 0.125);
+        this->color = &color;
+    }
+    coin(int radius, int scorePoint, vector *translation, quadraple *rotation, quadraple *deepRotation, rgbColor *color){
+        this->radius = radius;
+        this->scorePoint = scorePoint;
+        this->translation = translation;
+        this->rotation = rotation;
+        this->deepRotation = deepRotation;
+        this->color = color;
     }
     coin(){
         this->radius = 10;
