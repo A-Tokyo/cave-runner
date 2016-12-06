@@ -11,6 +11,8 @@
 #include "gameStructs.hpp"
 
 
+void drawRunner(character* thisCharacter);
+
 /*
  * Add drawing functions' signatures here.
  */

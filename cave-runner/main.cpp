@@ -19,6 +19,8 @@ static int windowHeight = 720;
 // Game configuration
 void newGame();
 void endGame();
+// Game drawing
+void draw(character* runnerCharacter);
 // Game I/O
 void gameKeyUp(unsigned char k, int x,int y);
 void gamePassiveMotion(int x, int y);
@@ -65,6 +67,14 @@ void endGame() {
 }
 
 /*
+ * Draw all characters
+ */
+void draw(character* runnerCharacter){
+    drawRunner(runnerCharacter);
+    // add other draws here, and to the inputs
+}
+
+/*
  Passive Motion function is called whenever the mouse moves
  */
 void gamePassiveMotion(int x, int y){
@@ -86,14 +96,15 @@ void gameKeyUp(unsigned char k, int x,int y){
  */
 void Display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glPushMatrix();
     
-    if(!gameStat.isGameOver()) {
-        setupCamera();
-        setupLights();
+    if(gameStat.isGameOver()){
+        return;
     }
     
-    glPopMatrix();
+    setupCamera();
+    setupLights();
+    draw(&mainCharacter);
+    
     glFlush();
 }
 /*
