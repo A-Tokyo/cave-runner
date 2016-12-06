@@ -173,10 +173,12 @@ typedef struct gameCamera {
 } gameCamera;
 typedef struct gameStatus {
     std::string gameMode;
+    bool controlPlayer;
     bool gameOver;
     gameStatus(std::string gameMode){
         this->gameMode = gameMode;
         this->gameOver = false;
+        this->controlPlayer = false;
     }
     bool isGameOver(){
         return gameOver;
@@ -184,8 +186,18 @@ typedef struct gameStatus {
     void setGameOver(bool gameOver){
         this->gameOver = gameOver;
     }
+    bool canControlPlayer(){
+        return controlPlayer;
+    }
+    void enableCanControlPlayer(){
+        controlPlayer = true;
+    }
+    void disableCanControlPlayer(){
+        controlPlayer = false;
+    }
     void reset() {
         gameOver = false;
+        controlPlayer = false;
     }
 }gameStatus;
 typedef struct playerStatus {
@@ -215,21 +227,16 @@ typedef struct character {
         this->deepRotation = deepRotation;
     }
     void setTranslation(vector toTranslate) {
-        translation->x = toTranslate.x;
-        translation->y = toTranslate.y;
-        translation->z = toTranslate.z;
+        translation->set(&toTranslate);
+    }
+    void setTranslation(float x, float y, float z) {
+        translation->set(x, y, z);
     }
     void setRotation(quadraple toRotate) {
-        rotation->a = toRotate.a;
-        rotation->x = toRotate.x;
-        rotation->y = toRotate.y;
-        rotation->z = toRotate.z;
+        rotation->set(&toRotate);
     }
     void setRotation(float a, float x, float y, float z) {
-        rotation->a = a;
-        rotation->x = x;
-        rotation->y = y;
-        rotation->z = z;
+        rotation->set(a, x, y, z);
     }
     void resetAttrs() {
         //TODO reset attributes here

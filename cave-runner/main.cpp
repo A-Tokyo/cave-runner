@@ -21,6 +21,8 @@ void newGame();
 void endGame();
 // Game drawing
 void draw(character* runnerCharacter);
+// Player controls
+void controlPlayer(unsigned char k);
 // Game I/O
 void gameKeyUp(unsigned char k, int x,int y);
 void gamePassiveMotion(int x, int y);
@@ -91,7 +93,28 @@ void gameKeyUp(unsigned char k, int x,int y){
             endGame();
             break;
     }
+    if(gameStat.canControlPlayer()){
+        controlPlayer(k);
+    }
 }
+
+void controlPlayer(unsigned char k){
+    switch (k) {
+        case 'w':
+            mainCharacter.setTranslation(mainCharacter.translation->x, mainCharacter.translation->y, mainCharacter.translation->z--);
+            break;
+        case 'a':
+            mainCharacter.setTranslation(mainCharacter.translation->x-2, mainCharacter.translation->y, mainCharacter.translation->z);
+            break;
+        case 's':
+            mainCharacter.setTranslation(mainCharacter.translation->x, mainCharacter.translation->y, mainCharacter.translation->z++);
+            break;
+        case 'd':
+            mainCharacter.setTranslation(mainCharacter.translation->x+2, mainCharacter.translation->y, mainCharacter.translation->z);
+            break;
+    }
+}
+
 /*
  glut Display Function
  */
