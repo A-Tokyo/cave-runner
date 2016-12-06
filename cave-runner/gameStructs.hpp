@@ -229,6 +229,10 @@ typedef struct playerStatus {
             score=0;
         }
     }
+    void resetAttrs(){
+        lives=1;
+        score=0;
+    }
 }playerStatus;
 typedef struct character {
     vector *translation;
