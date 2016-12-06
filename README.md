@@ -4,8 +4,17 @@ An openGL 3d game where you run in a cave collecting coins and avoiding obstacle
 ## Description
 The player runs inside a cave and we have categories of coins and each one increases the score with a different increment depending on the category of the coin collected.
 The player will jump using the space keyboard button and will use the left and right keyboard buttons to avoid rocks.
-The mouse will be used to control the camera view . 
+The mouse will be used to control the camera view .
 The main target is to complete 5 minutes without colliding with any obstacle and ending up having the maximum score possible.
+
+## Controls
+* a: move to the left
+* d: move to the right
+* w: move forward
+* s: move backward
+* space: Jump
+* n: new game.
+* esc: exit game
 
 ## Project Structure
 ```shell
@@ -43,8 +52,7 @@ If you are using windows:
 
 ## Contribution
 #### Style Guide:
-  This project uses camelCase naming, single-quotes, 4 space indentation and multiple comments per function. 
-  Use a single space after keywords.<br/>Ex: 
+  This project uses camelCase naming, single-quotes, 4 space indentation and multiple comments per function.
+  Use a single space after keywords.<br/>Ex:
 * int x = 3;
 * int main(int argc, char** argv) { ... }    
-
