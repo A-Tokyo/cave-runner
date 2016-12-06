@@ -159,7 +159,7 @@ void controlPlayer(unsigned char k){
  * Takes game character, coin and so on as inputs and applies all the game logic calling all the function
  */
 void gameLogic(character *thisCharacter){
-    
+    // TODO Apply game logic here, stimulate camera, check for hits and misses, increment score and so on
 }
 
 /*
