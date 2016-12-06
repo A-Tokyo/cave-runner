@@ -24,7 +24,6 @@ void drawRunner(character* thisCharacter){
     
         glPopMatrix(); // popping 1st level matrix
     
-    
     glPopMatrix(); // popping main matrix
 }
 
@@ -32,6 +31,26 @@ void drawCave(){
     glPushMatrix(); // pushing main matrix
     
     // TODO draw cave here
+    
+    glPopMatrix(); // popping main matrix
+}
+
+void drawRock(obstacle* thisObstacle){
+    glPushMatrix(); // pushing main matrix
+        //Top Level Rotation (adjustable through thisObstacle)
+        glRotated(thisObstacle->rotation->a ,thisObstacle->rotation->x, thisObstacle->rotation->y, thisObstacle->rotation->z);
+        //Top Level Translation (adjustable through thisObstacle)
+        glTranslated(thisObstacle->translation->x, thisObstacle->translation->y, thisObstacle->translation->z);
+    
+        // Creating the gluNewQuadric object
+        GLUquadricObj * qobj;
+        qobj = gluNewQuadric();
+    
+        glPushMatrix(); // pushing 1st level matrix
+
+            // TODO Draw rock here using the attributes of thisObstacle
+    
+        glPopMatrix(); // popping 1st level matrix
     
     glPopMatrix(); // popping main matrix
 }

@@ -13,6 +13,7 @@
 
 void drawRunner(character* thisCharacter);
 void drawCave();
+void drawRock(obstacle* thisObstacle);
 
 /*
  * Add drawing functions' signatures here.
