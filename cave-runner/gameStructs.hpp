@@ -235,7 +235,6 @@ typedef struct character {
         //TODO reset attributes here
     }
 } character;
-
 typedef struct obstacle {
     int length;
     int height;
@@ -256,6 +255,29 @@ typedef struct obstacle {
         this->rotation = &rotation;
     }
 }obstacle;
+typedef struct coin {
+    int radius;
+    int scorePoint;
+    vector *translation;
+    quadraple *rotation;
+    quadraple *deepRotation;
+    coin(int radius, int scorePoint, vector *translation, quadraple *rotation, quadraple *deepRotation){
+        this->radius = radius;
+        this->scorePoint = scorePoint;
+        this->translation = translation;
+        this->rotation = rotation;
+        this->deepRotation = deepRotation;
+    }
+    coin(){
+        this->radius = 10;
+        vector translation(0,0,0);
+        this->translation = &translation;
+        quadraple rotation(0,0,0,0);
+        this->rotation = &rotation;
+        quadraple deepRotation(0,0,1,0);
+        this->deepRotation = &deepRotation;
+    }
+}coin;
 
 
 
