@@ -7,6 +7,8 @@ The player will jump using the space keyboard button and will use the left and r
 The mouse will be used to control the camera view .
 The main target is to complete 5 minutes without colliding with any obstacle and ending up having the maximum score possible.
 
+[Checkout the Demo video here](https://github.com/A-Tokyo/cave-runner/raw/master/Cave%20Runner%20Demo.mp4)
+
 ## Controls
 * a: move to the left
 * d: move to the right
